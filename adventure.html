@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+        <!--Rob Rizzacasa and Frank Boccichio 
+        Text Based Game-->
+        <head>
+                <meta charset="utf-8">
+                <title>Escape the Darkness</title>
+                
+                <!--Style doesn't work-->
+                <!--Style doesn't work-->
+                <!--Style doesn't work-->
+                <!--Style doesn't work-->
+                <!--Style doesn't work-->
+                <link rel="stylesheet" href="style.css" type="text/css" media="screen"></style>
+                <script type="text/javascript" src="GameLogic.js"></script>
+                <script type="text/javascript" src="Navigation.js"></script>
+                <script type="text/javascript" src="locations.js"></script>
+                <script type="text/javascript" src="items.js"></script>
+                <script type="text/javascript">
+                 
+                function updateDisplay(msg){
+                        var textarea = document.getElementById("tagame");
+            textarea.value = textarea.value + "\n" + msg;                        
+                        textarea.scrollTop = textarea.scrollHeight;
+        }
+                </script>
+        </head>
+        <body onload="init();">
+                <h1>
+                Escape the Darkness
+                </h1>
+                
+                <h2>
+                 Good Luck...You're Gonna Need It 
+                </h2>
+                
+                <textarea id="tagame" name="Location" rows="16" cols="100%"></textarea>
+                
+                <br>
+               
+                <input type="text" 
+                id="textprompt" 
+                name="Enter Command" 
+                size="32" 
+                onKeydown="if(event.keyCode==13) gettext();">
+                
+                <input type="button" 
+                value="Go" 
+                onclick="gettext();">
+                      
+                <br>
+                <input type="button"
+                value="Display Inventory"
+                onclick="displayInventory();">      
+
+				<br>
+				<input type="button"
+				value="Take The Rope!"
+				onclick="starting_item('take rope');"
+				id="btn1">
+				
+				<br>
+				<input type="button"
+				value="Take The Flashlight!"
+				onclick="starting_item('take flashlight');"
+				id="btn2">				
+				
+				<br>
+				<input type="button"
+				value="Take Nothing! Who Needs Charity!"
+				onclick="starting_item('take nothing');"
+				id="btn3"
+				>
+              
+                         
+        </body>
+</html>
